@@ -1,0 +1,71 @@
+package board;
+import piece.*;
+
+/**
+ * @author Martin Wallace
+ * <p> marty.wallace@ymail.com
+ * <p> Jan 28th 2016
+ */
+public class Square {
+	
+	private boolean empty;
+	private Piece piece;
+	private Location loc;
+	private final boolean isWhite;
+	
+	public Square(Location loc, boolean isWhite){
+		this.loc = loc;
+		this.empty = true;
+		this.piece = null;
+		this.isWhite = isWhite;
+	}
+	
+	public boolean isEmpty(){
+		return this.empty;
+	}
+	
+	public Location getLocation(){
+		return this.loc;
+	}
+	public void setFilled(){
+		this.empty = false;
+	}
+	public void setEmpty() {
+		this.empty = true;
+	}
+	
+	public boolean isWhite(){
+		return isWhite;
+	}
+	public void setPiece(Piece piece){
+		this.piece = piece;
+	}
+	public void removePiece(){
+		this.piece = null;
+	}
+	
+	public String toString(){
+		if( piece instanceof Rook){
+			return "R";
+		}
+		if(piece instanceof Knight){
+			return "H";
+		}
+		if(piece instanceof Bishop){
+			return "B";
+		}
+		if(piece instanceof Pawn){
+			return "P";
+		}
+		if(piece instanceof Queen){
+			return "Q";
+		}
+		if(piece instanceof King){
+			return "K";
+		}
+		if(isWhite){
+			return "_";
+		}
+		return "-";
+	}
+}

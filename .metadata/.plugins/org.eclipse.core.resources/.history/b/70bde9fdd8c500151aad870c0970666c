@@ -1,0 +1,38 @@
+package piece;
+
+import java.util.ArrayList;
+
+import board.Square;
+
+public abstract class Piece {
+	
+	private Square currentSquare;
+	private final boolean isWhite;
+	private ArrayList<Square> availableSquares;
+	
+	public Piece(boolean isWhite){
+		this.isWhite = isWhite;
+	}
+	
+	
+	public void setSquare(Square square){
+		this.currentSquare = square;
+		this.currentSquare.setFilled();
+	}
+	
+	public void move(Square square){
+		this.currentSquare.setEmpty();
+		this.currentSquare = square;
+ assert this.currentSquare.isEmpty() : "Attempted to move to filled Square";
+		this.currentSquare.setFilled();
+	}
+	
+	public boolean isWhite(){
+		return this.isWhite;
+	}
+	
+	public boolean isBlack(){
+		return !this.isWhite;
+	}
+	
+}

@@ -1,0 +1,18 @@
+package piece;
+
+import java.util.ArrayList;
+
+import board.Square;
+
+public class Knight extends Piece{
+
+	public Knight(boolean isWhite) {
+		super(isWhite);
+	}
+
+	@Override
+	public ArrayList<Square> getAvailableMoves() {
+		ArrayList<Square> availableMoves = new ArrayList<Square>();
+		return availableMoves;
+	}
+}

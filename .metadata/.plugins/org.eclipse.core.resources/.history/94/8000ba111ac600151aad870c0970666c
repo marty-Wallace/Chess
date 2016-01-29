@@ -1,0 +1,14 @@
+package piece;
+
+/**
+ * 
+ * @author Martin Wallace
+ * <p> marty.wallace@ymail.com
+ * <p> Jan 28th 2016
+ *
+ */
+public enum PieceType {
+	
+	KNIGHT, BISHOP, ROOK, PAWN, KING, QUEEN;
+
+}

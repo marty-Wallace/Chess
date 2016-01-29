@@ -1,0 +1,18 @@
+package piece;
+
+import board.Square;
+
+public abstract class Piece {
+	
+	private Square currentSquare;
+	private boolean isWhite;
+	
+	public Piece(boolean isWhite){
+		this.isWhite = isWhite;
+	}
+	
+	public void setSquare(Square square){
+		this.currentSquare = square;
+		this.currentSquare
+	}
+}

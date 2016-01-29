@@ -1,0 +1,12 @@
+package game;
+
+import board.Board;
+
+public class Processor {
+
+	public void evaluateMove(String pMove, Board board) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

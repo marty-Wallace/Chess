@@ -1,0 +1,21 @@
+package piece;
+
+import java.util.ArrayList;
+
+import board.Board;
+import board.Square;
+
+public class King extends Piece{
+
+	public King(boolean isWhite) {
+		super(isWhite);
+	}
+
+	@Override
+	public ArrayList<Square> getAvailableMoves(Board board) {
+		ArrayList<Square> availableMoves = new ArrayList<Square>();
+		return availableMoves;
+	}
+	
+
+}

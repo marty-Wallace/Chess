@@ -1,0 +1,24 @@
+package Game;
+
+import board.Board;
+
+public class Starter {
+	
+	private Board board;
+	
+	public static void main(String[]args){
+		
+		Starter starter = new Starter();
+		starter.run();
+	}
+	
+	public void run(){
+		
+		initializeBoard();
+	}
+	
+	public void initializeBoard(){
+		board = new Board();
+		
+	}
+}

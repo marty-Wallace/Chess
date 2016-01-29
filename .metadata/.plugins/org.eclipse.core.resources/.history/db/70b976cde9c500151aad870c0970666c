@@ -1,0 +1,30 @@
+package Game;
+
+import board.Board;
+
+/**
+ * Starts up game by initializing board and setting pieces
+ * @author Martin Wallace
+ * <p> marty.wallace@ymail.com
+ * <p> Jan 28th 2016
+ */
+public class Driver {
+	
+	private Board board;
+	
+	public static void main(String[]args){
+		
+		Driver driver = new Driver();
+		driver.run();
+	}
+	
+	public void run(){
+		
+		initializeBoard();
+	}
+	
+	public void initializeBoard(){
+		board = new Board();
+		
+	}
+}

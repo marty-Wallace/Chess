@@ -1,0 +1,51 @@
+package game;
+
+import java.util.ArrayList;
+
+import board.Board;
+import board.Location;
+import board.Square;
+import piece.Piece;
+import player.Player;
+
+public class Processor {
+
+
+	public void evaluateMove(String pMove, Board board, Player p) {
+		ArrayList<String>moves = new ArrayList<String>();
+
+		moves = board.getMoves(p.isWhite());
+
+		if(!moves.contains(pMove)){
+			System.out.println("That is not a move");
+			boolean badInput = true; 
+			while(badInput){
+				pMove = p.requestMove();
+
+				if(moves.contains(pMove)){
+					badInput = false;
+				}
+			}
+
+		}
+		
+		String[]moveParts = pMove.split(" ");
+		// moveParts[0] = pieceType 
+		// moveParts[1] = startRow
+		// moveParts[2] = startCol
+		// moveParts[3] = endRow
+		// moveParts[4] = endCol
+		Location start = new Location(Integer.parseInt(moveParts[1]), Integer.parseInt(moveParts[2]));
+		Location end = new Location(Integer.parseInt(moveParts[3]), Integer.parseInt(moveParts[4]));
+
+		Square[][]gameBoard = board.getBoard();
+		Piece movingPiece = gameBoard[start.getRow()][start.getCol()].getPiece();
+		gameBoard[start.getRow()][start.getCol()].removePiece();
+		gameBoard[end.getRow()][end.getCol()].setEmpty();
+		gameBoard[end.getRow()][end.getCol()].setPiece(movingPiece);
+
+
+
+	}
+
+}
