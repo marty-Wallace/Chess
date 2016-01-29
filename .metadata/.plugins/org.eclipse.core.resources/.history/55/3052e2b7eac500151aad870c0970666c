@@ -1,7 +1,0 @@
-package piece;
-
-public enum PieceType {
-	
-	KNIGHT, BISHOP, ROOK, PAWN, KING, QUEEN;
-
-}

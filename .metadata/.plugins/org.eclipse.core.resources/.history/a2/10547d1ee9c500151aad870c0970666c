@@ -1,7 +1,0 @@
-package Game;
-
-public class Move {
-
-	private String moveNotation;
-	
-}
