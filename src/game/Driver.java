@@ -28,6 +28,9 @@ public class Driver {
 		this.visualizer = new Visualizer();
 	}
 	
+	/**
+	 * Main game loop requests move from player 1 then updates board then visualizes then the same for player 2
+	 */
 	public void run(){
 		boolean running = true;
 		board = new Board();
@@ -35,6 +38,7 @@ public class Driver {
 			requestPlayerMove(player1);
 			running = update();
 			board.printBoard();
+			visualizer.update(board);
 			requestPlayerMove(player2);
 			running = update();
 			board.printBoard();
@@ -43,10 +47,23 @@ public class Driver {
 		}
 	}
 	
+	/**
+	 * Requests move from player and updates board through the processor
+	 * 
+	 * @param p
+	 * {@code Player} that is currently moving their piece.
+	 */
 	public void requestPlayerMove(Player p){
 		String pMove = p.requestMove();
 		processor.evaluateMove(pMove, board, p);
 	}
+	
+	/**
+	 * TODO 
+	 * Method to check if game is over 
+	 * @return
+	 * returns {@code boolean} that is false if the game is over
+	 */
 	public boolean update(){
 		
 		return true;

@@ -46,6 +46,15 @@ public abstract class Piece {
 		return !this.isWhite;
 	}
 
+	/**
+	 * Returns all viable moves for this piece. 
+	 * @param board
+	 * The current {@code Board}
+	 * @param loc
+	 * the {@code Location} of this piece
+	 * @return
+	 * returns list of all viable moves as an {@code ArrayList<Move>} 
+	 */
 	public abstract ArrayList<String> getAvailableMoves(Board board, Location loc);
 	
 	public String moveNotation(int startRow, int startCol, int endRow, int endCol){

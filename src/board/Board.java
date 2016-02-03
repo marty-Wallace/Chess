@@ -17,7 +17,7 @@ public class Board {
 	public Board(){
 		setEmptyBoard();
 		setInitialConfiguration();
-		//printMoves();
+		printMoves();
 		printBoard();
 		
 	}

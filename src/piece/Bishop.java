@@ -20,7 +20,6 @@ public class Bishop extends Piece {
 		super(isWhite, "bishop");
 	}
 	
-
 	@Override
 	public ArrayList<String> getAvailableMoves(Board board, Location loc) {
 		ArrayList<String> availableMoves = new ArrayList<String>();
@@ -99,6 +98,12 @@ public class Bishop extends Piece {
 		return availableMoves;
 	}
 	
+
+	/**
+	 * Returns the integer code used to identify a bishop
+	 * @return
+	 *  3
+	 */
 	public int getCode(){
 		return 3;
 	}

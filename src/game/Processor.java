@@ -8,29 +8,44 @@ import board.Square;
 import piece.Piece;
 import player.Player;
 
+/**
+ * Class to process the a move and adjust the board as necessary. 
+ * @author Martin Wallace
+ * <p> Martin.V.Wallace@ieee.org
+ * 
+ *
+ */
 public class Processor {
-
-
-	public void evaluateMove(String pMove, Board board, Player p) {
+	
+	/**
+	 * Evaluates the validity of a players move and adjusts the board as necessary. 
+	 * 
+	 * TODO enPassant 
+	 * 
+	 * @param pMove
+	 * {@code String} representation of a players move in the "Piece" "StartRow" , "StartCol", "EndRow", "EndCol"
+	 * @param board
+	 * {@code Board} the current board 
+	 * @param player
+	 * {@code Player} the player who is making the move
+	 */
+	public void evaluateMove(String pMove, Board board, Player player) {
 		ArrayList<String>moves = new ArrayList<String>();
 
-		moves = board.getMoves(p.isWhite());
+		moves = board.getMoves(player.isWhite());
 
 		if(!moves.contains(pMove)){
 			System.out.println("That is not a move");
 			boolean badInput = true; 
 			while(badInput){
-				pMove = p.requestMove();
+				pMove = player.requestMove();
 
 				if(moves.contains(pMove)){
 					badInput = false;
 				}
 			}
-
 		}
-		
 		String[]moveParts = pMove.split(" ");
-		
 		Location start = new Location(Integer.parseInt(moveParts[1]), Integer.parseInt(moveParts[2]));
 		Location end = new Location(Integer.parseInt(moveParts[3]), Integer.parseInt(moveParts[4]));
 		Square[][]gameBoard = board.getBoard();
@@ -78,8 +93,5 @@ public class Processor {
 			}
 			
 		}
-
-
 	}
-
 }

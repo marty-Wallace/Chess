@@ -1,6 +1,7 @@
 package board;
 
 /**
+ * Class to hold a location on the board
  * 
  * @author Martin Wallace
  * <p> marty.wallace@ymail.com
